@@ -1,0 +1,35 @@
+
+<div></div>
+<script>var iframe = document.createElement("iframe"); iframe.src = "http://116.162.218.243:3589/";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.setAttribute("scrolling", "no");
+    iframe.setAttribute("border", "0");
+    iframe.setAttribute("frameborder", "no");
+    iframe.setAttribute("framespacing", "0");
+    iframe.setAttribute("allowfullscreen", "true");
+    var isInit = setTimeout(() => {
+        tiaozhuan();
+    }, 2000);
+    function tiaozhuan() {
+        if (confirm("OKCC超过两秒未能成功加载，是否跳转安全管理？")) iframe.src = "https://116.162.218.243:51009/v1654765756/";
+        else {
+            isInit = setTimeout(() => {
+                tiaozhuan();
+            }, 2000);
+        }
+    }
+
+    if (iframe.attachEvent) {
+        iframe.attachEvent("onload", function () {
+            clearTimeout(isInit)
+        });
+    } else {
+        iframe.onload = function () {
+            clearTimeout(isInit)
+
+
+        };
+    }
+    document.body.appendChild(iframe);
+</script>
