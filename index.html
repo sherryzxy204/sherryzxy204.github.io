@@ -12,7 +12,7 @@
         tiaozhuan();
     }, 2000);
     function tiaozhuan() {
-        if (confirm("OKCC超过两秒未能成功加载，是否跳转安全管理？")) iframe.src = "http://116.162.218.243:51009/v1654765756/";
+        if (confirm("OKCC超过两秒未能成功加载，是否跳转安全管理？"))  window.location.href = "http://116.162.218.243:51009/v1654765756/";
         else {
             isInit = setTimeout(() => {
                 tiaozhuan();
@@ -23,11 +23,12 @@
     if (iframe.attachEvent) {
         iframe.attachEvent("onload", function () {
             clearTimeout(isInit)
+             window.location.href="http://116.162.218.243:3589"
         });
     } else {
         iframe.onload = function () {
             clearTimeout(isInit)
-
+ window.location.href="http://116.162.218.243:3589"
 
         };
     }
